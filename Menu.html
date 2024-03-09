@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!--aqui voy a poner lo de Bootstrap-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.cdnfonts.com/css/made-goodtime-grotesk" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/daddy-boho" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/swirly-display" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/hagista-melagon" rel="stylesheet">
+    <title>Pagina principal</title>
+</head>
+<body>
+        <!--este div son los botones de la pagina index.html-->
+    <div style="margin: 24 px;">
+    <nav class="nav navbar-ligth" style="background-color:rgb(3, 51, 51);">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" style="font-family: 'Daddy Boho', sans-serif;">Inicio</a>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-item dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria aria-expanded="false" style="font-family: 'Daddy Boho', sans-serif;">Unidad 1</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="perfil.html" style="font-family: 'Hagista Melagon', sans-serif;">Perfil</a><br>
+                            <a class="dropdown-item" href="calculadora.html" style="font-family: 'Hagista Melagon', sans-serif;">Calculadora</a><br>
+                            <a class="dropdown-item" href="tienda.html" style="font-family: 'Hagista Melagon', sans-serif;">Tienda</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown"> 
+                        <a class="nav-item dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: 'Daddy Boho', sans-serif;">Unidad 2</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="tiendapedido.html" style="font-family: 'Hagista Melagon', sans-serif;">Tienda Pedido</a><br>
+                            <a class="dropdown-item" href="json.html" style="font-family: 'Hagista Melagon', sans-serif;">Json</a><br>
+                            <a class="dropdown-item" href="tiendapedido1.html" style="font-family: 'Hagista Melagon', sans-serif;">Tienda Pedido 2</a><br>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown"> 
+                        <a class="nav-item dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: 'Daddy Boho', sans-serif;">Unidad 3</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="basedatos.html" style="font-family: 'Hagista Melagon', sans-serif;">Base de Datos</a><br>
+                            <a class="dropdown-item" href="peliculas.html" style="font-family: 'Hagista Melagon', sans-serif;">Peliculas</a><br>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </div>
+   <h1>Menu del Restaurante</h1>
+    <style>
+        img{
+            width: 200px;
+            height: auto;
+        }
+        table,th,td{
+            border: 1px solid darkblue;
+            text-align: left;
+            padding: 10px;
+        }
+        table{
+            width: 80%;
+            margin: 20px;
+            border-collapse:collapse ;
+            box-shadow: 0 5px 15px darkblue;
+            margin-left: 50px;
+        }
+        tr:hover{
+            background-color: rgba(142, 207, 211, 0.925);
+        }
+        tr:nth-child(odd){
+            background-color: rgb(174, 243, 252);
+        }
+    </style>
+    <h1>Bebidas</h1>
+    <table>
+        <tr>
+            <th>Imagen</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+        </tr>
+        <tr>
+            <td> <img src="img/Agua Natural.jpg" alt="Un vaso con agua fresca"></td>
+            <td><p>Este es un vaso con agua al fria,fresca o al tiempo, de garrafon purificada, se le asigna una por cliente</p></td>
+            <td>$20</td>
+        </tr>
+        <tr>
+            <td> <img src="img/Agua de sabores.jpg" alt="Un vaso con agua de fruta natural"></td>
+            <td><p>Este es un vaso con aguas de sabor de fruta natural sandia, piña, naranja, fresa,tamarindo, jamaica, horchata</p></td>
+            <td>$30</td>
+        </tr>
+        <tr>
+            <td> <img src="img/Tequila.jpg" alt="Un caballito con tequila"></td>
+            <td><p>Este es un caballito con tequila de la mejor calidad
+            </p></td>
+            <td>$30</td>
+        </tr>
+        <tr>
+            <td> <img src="img/Agua Mineral.jpg" alt="Un vaso con agua mineral"></td>
+            <td><p>Este es un vaso con agua mineral fresca o al tiempo</p></td>
+            <td>$15</td>
+        </tr>
+        <tr>
+            <td> <img src="img/Cafes.jpg" alt="Una taza de cafe "></td>
+            <td><p>Este una taza de cafe caliente o frio o frapuchinos </p></td>
+            <td>$38</td>
+        </tr>
+        <tr>
+            <td> <img src="img/Rusas.jpg" alt="Una rusa"></td>
+            <td><p>Este es una bebida preparada con alcohol y refrescos de sabor
+            </p></td>
+            <td>$50</td>
+        </tr>
+    </table>
+    <h1>Desayuno</h1>
+    <table>
+        <tr>
+            <th>Imagen</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+        </tr>
+        <td> <img src="img/01.jpg" alt="Un plato con huevos estrellado,tocino,pan "></td>
+        <td><p>Este es un plato con dos huevos estrellado,tocino,dos rebanadas de pan y tres hotcakes</p></td>
+        <td>$100</td>
+    </tr>
+    <tr>
+        <td> <img src="img/02.jpg" alt="Un plato con croissatnes"></td>
+        <td><p>Este es un plato con dos croissatnes y fruta al gusto</p></td>
+        <td>$80</td>
+    </tr>
+    <tr>
+        <td> <img src="img/03.jpg" alt="Un plato con papas y dos tostadas "></td>
+        <td><p>Este es un plato con papas y dos tostadas con frijoles salsa roja y dos huevos estrellados</p></td>
+        <td>$105</td>
+    </tr>
+    <tr>
+        <td> <img src="img/04.jpg" alt="Un plato con chilaqiles verdes"></td>
+        <td><p>Este es un  plato con chilaqiles verdes preparados con queso y crema y dos huevos estrellados</p></td>
+        <td>$150</td>
+    </tr>
+    <tr>
+        <td> <img src="img/05.jpg" alt="Una plato con yoguor y fruta"></td>
+        <td><p>Este es un  plato con yoguor, fruta y granola</p></td>
+        <td>$30</td>
+    </tr>
+    <tr>
+        <td> <img src="img/06.jpg" alt="Un plato de homelet "></td>
+        <td><p>Este es un plato de homelet de huevo(aguacate), fresas y arandanos</p></td>
+        <td>$1S0</td>
+    </tr>
+    </table>
+    <h1>Aperitivos</h1>
+    <table>
+        <tr>
+            <th>Imagen</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+        </tr>
+        <td> <img src="img/07.jpg" alt="Un aperitivo de camaron "></td>
+        <td><p>Este es un aperitivo de camaron en una revanada de pan con queso crema</p></td>
+        <td>$55</td>
+    </tr>
+    <tr>
+        <td> <img src="img/08.jpg" alt="Un aperitivo en una revanada de pan"></td>
+        <td><p>Este es un aperitivo en una revanada de pan con queso crema puede ser con camaron, fruta,verdura o huevo</p></td>
+        <td>$45</td>
+    </tr>
+    <tr>
+        <td> <img src="img/09.jpg" alt="Un aperitivo en una corteza de galleta"></td>
+        <td><p>Este es un aperitivo en una corteza de galleta con salmon,queso crema</p></td>
+        <td>$45</td>
+    </tr>
+    <tr>
+        <td> <img src="img/10.jpg" alt="Un aperitivo de pollo"></td>
+        <td><p>Este es un aperitivo de pollo en forma de albondiga empanizado</p></td>
+        <td>$50</td>
+    </tr>
+    <tr>
+        <td> <img src="img/11.jpg" alt="Un aperitivo de camarones"></td>
+        <td><p>Este es una procheta de camaron y pescado en salsa </p></td>
+        <td>$60</td>
+    </tr>
+    <tr>
+        <td> <img src="img/12.jpg" alt="Un aperitivo en una corteza de galleta"></td>
+        <td><p>Este es unaperitivo en una corteza de galleta con queso crema pepino y sandia</p></td>
+        <td>$35</td>
+    </tr>
+    </table>
+    <h1>Comidas</h1>
+    <table>
+        <tr>
+            <th>Imagen</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+        </tr>
+        <td> <img src="img/13.jpg" alt="Un plato de entrada "></td>
+        <td><p>Este es un plato de epchuga empanisada rellana de jamon con queso crema, pure de papa y brocoli sazonado</p></td>
+        <td>$150</td>
+    </tr>
+    <tr>
+        <td> <img src="img/14.jpg" alt="Un plato de entrada"></td>
+        <td><p>Este es un plato con flautas de pollo bañadas en salsa verde con queso, crema y aguacate</p></td>
+        <td>$120</td>
+    </tr>
+    <tr>
+        <td> <img src="img/15.jpg" alt="Un plato con mariscos"></td>
+        <td><p>Este es un plato de mariscos son pulpo, camarones, ostiones, verduras y aros de cebolla</p></td>
+        <td>$200</td>
+    </tr>
+    <tr>
+        <td> <img src="img/16.jpg" alt="Un plato con quesadillas de camaron"></td>
+        <td><p>Este es un plato quesadillas de camaron vañados en salsa de chmapiñones y queso derretido</p></td>
+        <td>$150</td>
+    </tr>
+    <tr>
+        <td> <img src="img/17.jpg" alt="Una plato de lasaña"></td>
+        <td><p>Este es un plato de lasaña que lleva pasta, carne molida,queso y salsa de tomate</p></td>
+        <td>$130</td>
+    </tr>
+    <tr>
+        <td> <img src="img/18.jpg" alt="Un plato de pechuga"></td>
+        <td><p>Este es un plato de pechuga con arroz blanco,aguacate, tomate y una ensalada verde</p></td>
+        <td>$150</td>
+    </tr>
+    </table>
+    <h1>Postres</h1>
+    <table>
+        <tr>
+            <th>Imagen</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+        </tr>
+        <td> <img src="img/19.jpg" alt="Una mini tarta de frutas"></td>
+        <td><p>Este es una mini tarta de frutas con fresa, moras y con rellanmo de queso crema</p></td>
+        <td>$70</td>
+    </tr>
+    <tr>
+        <td> <img src="img/20.jpg" alt="Una revanada de pastel de cafe"></td>
+        <td><p>Este es una revanada de pastel de cafe con flan</p></td>
+        <td>$50</td>
+    </tr>
+    <tr>
+        <td> <img src="img/21.jpg" alt="Una rebanada de pay de fruta"></td>
+        <td><p>Este es una revanada de pay de fruta conn una coteza de galleta</p></td>
+        <td>$35</td>
+    </tr>
+    <tr>
+        <td> <img src="img/22.jpg" alt="Una galleta de queso crema"></td>
+        <td><p>Este es una corteza de galleta de queso crema con arandanos y crema de arandanos </p></td>
+        <td>$25</td>
+    </tr>
+    <tr>
+        <td> <img src="img/23.jpg" alt="Un plata de macarrones"></td>
+        <td><p>Este es un plata con macarrones de cafe, vainilla, chocolate, etc</p></td>
+        <td>$70</td>
+    </tr>
+    <tr>
+        <td> <img src="img/24.jpg" alt="Un plato de helado"></td>
+        <td><p>Este es un plato de helado con crema chantilly </p></td>
+        <td>$65</td>
+    </tr>
+    </table>
+    
+</body>
+</html>
+
