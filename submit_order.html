@@ -13,7 +13,8 @@
     <link href="https://fonts.cdnfonts.com/css/daddy-boho" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/swirly-display" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/hagista-melagon" rel="stylesheet">
-    <title>Pagina principal</title>
+    <link href="https://fonts.cdnfonts.com/css/mercuriademo" rel="stylesheet">
+    <title>Resumen</title>
 </head>
 <body>
         <!--este div son los botones de la pagina index.html-->
@@ -50,8 +51,39 @@
         </div>
     </nav>
     </div>
-<h1>Tienda con Pedido</h1>
-<a href="Menu2.html"><img src="img/portada.jpg" alt="mi tiendita" style="width: 700px; 
-  height: auto; display: block; margin-left: auto; margin-right: auto;" ></a>    
+    <style>
+        body{
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            background-color: rgb(145, 204, 196);
+            margin: 0;
+            padding: 20px;
+            color: rgb(2, 67, 70);
+        }
+        h1{
+            text-align: center;
+            color: rgb(0, 0, 0);
+            text-shadow: 5px 5px 5px rgb(253, 249, 249);
+        }
+        form, #resumenpedido{
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px #666;
+            margin-top: 20px;
+            padding: 10px;
+        }
+    </style>
+    <h1 style="font-family: 'MercuriaDemo', sans-serif;">Resumen del Pedido</h1>
+    <div id="resumenpedido"></div>
+    <script>
+        window.onload = function(){
+            const params = new URLSearchParams(window.location.search);
+            const resumenpedido = document.getElementById('resumenpedido');
+            for (const [key,value] of params.entries()){
+                const detail = document.createElement('p');
+                detail.textContent =`${key}: ${value}`;
+                resumenpedido.appendChild(detail);
+            }
+        };
+    </script>
 </body>
 </html>
