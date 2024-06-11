@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.cdnfonts.com/css/made-goodtime-grotesk" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/daddy-boho" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/swirly-display" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/hagista-melagon" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/whoody" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/noto-serif-old-uyghur" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/evogria" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/atrox" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/tender-goliath-small-caps" rel="stylesheet">
+    <title>Pagina principal</title>
+</head>
+<body>
+    <div style="margin: 24 px;">
+    <nav class="nav navbar-ligth" style="background-color:rgb(3, 51, 51);">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" style="font-family: 'Daddy Boho', sans-serif;">Inicio</a>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-item dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria aria-expanded="false" style="font-family: 'Daddy Boho', sans-serif;">Unidad 1</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="perfil.html" style="font-family: 'Hagista Melagon', sans-serif;">Perfil</a><br>
+                            <a class="dropdown-item" href="calculadora.html" style="font-family: 'Hagista Melagon', sans-serif;">Calculadora</a><br>
+                            <a class="dropdown-item" href="tienda.html" style="font-family: 'Hagista Melagon', sans-serif;">Tienda</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown"> 
+                        <a class="nav-item dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: 'Daddy Boho', sans-serif;">Unidad 2</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="tiendapedido.html" style="font-family: 'Hagista Melagon', sans-serif;">Tienda Pedido</a><br>
+                            <a class="dropdown-item" href="json.html" style="font-family: 'Hagista Melagon', sans-serif;">Json</a><br>
+                            <a class="dropdown-item" href="tiendapedido1.html" style="font-family: 'Hagista Melagon', sans-serif;">Tienda Pedido 2</a><br>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown"> 
+                        <a class="nav-item dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: 'Daddy Boho', sans-serif;">Unidad 3</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="basedatos.html" style="font-family: 'Hagista Melagon', sans-serif;">Base de Datos</a><br>
+                            <a class="dropdown-item" href="peliculas.html" style="font-family: 'Hagista Melagon', sans-serif;">Peliculas</a><br>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </div>
+    <header><h1>Star Wars</h1></header>
+    <h1>People, Vehicles and Species</h1>
+    <main id="peopleContainer"></main>
+    <main id="vehiclesContainer"></main>
+    <main id="speciesContainer"></main>
+
+    <style>
+        body{
+            background-color: black;
+        }
+        main{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px;
+        }
+        .card{
+            background-color: rgb(255, 255, 13);
+            border: 2px solid ;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 20px;
+            width: 200px;
+            box-shadow: 0 6px 10px rgb(10, 131, 161);
+        }
+        h1{
+            color: white;
+            text-shadow: beige;
+            text-align: center;
+            font-family: 'Tender Goliath Small-Caps', sans-serif;
+            text-shadow: 3px 3px 5px red;                  
+        }
+        .card h3{
+            margin: 10px 0 5px 0;
+            color:black;
+            border-radius: 5px; 
+            text-shadow: 3px 3px 5px green;
+             font-family: 'whoody', sans-serif;    
+        }
+        .card p{
+            margin: 10px 0 5px 0;
+            color: black;
+            font-family: 'Evogria', sans-serif;                                    
+        }
+        .card:hover{
+            transform: scale(1.1);
+        }
+    </style>
+    <script>
+        const peopleContainer = document.getElementById('peopleContainer');
+        const vehiclesContainer = document.getElementById('vehiclesContainer');
+        const speciesContainer = document.getElementById('speciesContainer');
+
+        async function fetchData(url, displayFunction) {
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                displayFunction(data.results);
+            } catch (error) {
+                console.error('Error al obtener los datos:', error);
+            }
+        }
+        
+        function displayPeople(data) {
+            peopleContainer.innerHTML = '';
+            
+            data.forEach(item => {
+                const card = document.createElement('div');
+                    card.classList.add('card');
+
+                    const name = document.createElement('h3');
+                    name.textContent = item.name;
+
+                    const  height= document.createElement('p');
+                    height.textContent = `Height: ${item.height}`;
+                    const mass = document.createElement('p');
+                    mass.textContent = `Mass: ${item.mass}`;
+                    const  hairColor = document.createElement('p');
+                    hairColor.textContent = `Hair Color: ${item.hair_color}`;
+                    const skinColor = document.createElement('p');
+                    skinColor.textContent = `Skin Color: ${item.skin_color}`;
+                    const  eyeColor = document.createElement('p');
+                    eyeColor.textContent = `Eye Color: ${item.eye_color}`;
+                    const birthYear = document.createElement('p');
+                    birthYear.textContent = `Birth Year: ${item.birth_year}`;
+                    const gender = document.createElement('p');
+                    gender.textContent = `Genero: ${item.gender}`;
+
+                    card.appendChild(name);
+                    card.appendChild(height);
+                    card.appendChild(mass);
+                    card.appendChild(hairColor);
+                    card.appendChild(skinColor);
+                    card.appendChild(eyeColor);
+                    card.appendChild(birthYear);
+                    card.appendChild(gender);
+
+                peopleContainer.appendChild(card);
+            });
+        }
+        
+        function displayVehicles(data) {
+            vehiclesContainer.innerHTML = '';
+            data.forEach(item => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+
+                const name = document.createElement('h3');
+                name.textContent = `Nombre: ${item.name}`;
+                card.appendChild(name);
+                const model = document.createElement('p');
+                model.textContent = `Modelo: ${item.model}`;
+                card.appendChild(model);
+                const vehicleclass = document.createElement('p');
+                vehicleclass.textContent = `Clase de Vehiculo: ${item.vehicle_class}`;
+                card.appendChild(vehicleclass);
+                const manufacturer = document.createElement('p');
+                manufacturer.textContent = `Fabricante: ${item.manufacturer}`;
+                card.appendChild(manufacturer);
+                const length = document.createElement('p');
+                length.textContent = `Longitud: ${item.length}`;
+                card.appendChild(length);
+                const consincredits = document.createElement('p');
+                consincredits.textContent = `Contras: ${item.cost_in_credits}`;
+                card.appendChild(consincredits);
+                const crew = document.createElement('p');
+                crew.textContent = `Tripulacion: ${item.crew}`;
+                card.appendChild(crew);
+                const passengers = document.createElement('p');
+                passengers.textContent = `Contras: ${item.passengers}`;
+                card.appendChild(passengers);
+                const maxatmospheringspeed = document.createElement('p');
+                maxatmospheringspeed.textContent = `Velocidad: ${item.max_atmosphering_speed}`;
+                card.appendChild(maxatmospheringspeed);
+                const cargocapacity = document.createElement('p');
+                cargocapacity.textContent = `Capacidad de carga: ${item.cargo_capacity}`;
+                card.appendChild(cargocapacity);
+                const consumables = document.createElement('p');
+                consumables.textContent = `Consumibles: ${item.consumables}`;
+                card.appendChild(consumables);
+
+                vehiclesContainer.appendChild(card);
+            });
+        }
+
+        function displaySpecies(data) {
+            speciesContainer.innerHTML = '';
+            
+            data.forEach(item => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+
+                const name = document.createElement('h3');
+                name.textContent = `Nombre: ${item.name}`;
+                card.appendChild(name);
+                const classification = document.createElement('p');
+                classification.textContent = `Clasificacion: ${item.classification}`;
+                card.appendChild(classification);
+                const designation = document.createElement('p');
+                designation.textContent = `Designacion: ${item.designation}`;
+                card.appendChild(designation);
+                const averageheight = document.createElement('p');
+                averageheight.textContent = `Estatura: ${item.average_height}`;
+                card.appendChild(averageheight);
+                const averagelifespan = document.createElement('p');
+                averagelifespan.textContent = `Esperanza de vida: ${item.average_lifespan}`;
+                card.appendChild(averagelifespan);
+                const eyecolors = document.createElement('p');
+                eyecolors.textContent = `Color de Ojos: ${item.eye_colors}`;
+                card.appendChild(eyecolors);
+                const haircolors = document.createElement('p');
+                haircolors.textContent = `Color de cabello: ${item.hair_colors}`;
+                card.appendChild(haircolors);
+                const skincolors = document.createElement('p');
+                skincolors.textContent = `Color de piel: ${item.skin_colors}`;
+                card.appendChild(skincolors);
+                const language = document.createElement('p');
+                language.textContent = `Lenguaje: ${item.language}`;
+                card.appendChild(language);
+                const homeworld = document.createElement('p');
+                homeworld.textContent = `Color de piel: ${item.homeworld}`;
+                card.appendChild(homeworld);
+                const edited = document.createElement('p');
+                edited.textContent = `Lenguaje: ${item.edited}`;
+                card.appendChild(edited);
+
+                speciesContainer.appendChild(card);
+            });
+        }
+
+        fetchData('https://swapi.dev/api/people/', displayPeople);
+        fetchData('https://swapi.dev/api/vehicles/', displayVehicles);
+        fetchData('https://swapi.dev/api/species/', displaySpecies);
+    </script>
+</body>
+</html>
